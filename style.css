@@ -1,0 +1,487 @@
+
+}
+
+
+/* ---------- CARD ---------- */
+
+.card {
+    background: var(--white);
+
+    border: 1px solid var(--bd);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: 0 4px 15px rgba(27, 39, 51, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* ---------- IMAGEN ---------- */
+
+.card__media {
+    position: relative;
+
+    aspect-ratio: 4 / 3;
+
+    background: #e9eef5;
+
+    overflow: hidden;
+}
+
+.card__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.card:hover .card__img {
+    transform: scale(1.06);
+
+    opacity: 0.94;
+}
+
+
+/* ---------- CONTENIDO ---------- */
+
+.card__body {
+    flex: 1;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.card__title {
+    margin: 0;
+
+    font-size: 1.15rem;
+
+    font-weight: 750;
+
+    color: var(--txt);
+}
+
+.card__desc {
+    margin: 0;
+
+    color: var(--txt-light);
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* Hace que el botón quede abajo */
+
+.card__body .btn {
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+#faq {
+    background: var(--white);
+
+    border: 1px solid var(--bd);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+}
+
+#faq h2 {
+    margin-bottom: 18px;
+}
+
+
+/* ---------- DETAILS ---------- */
+
+details {
+    border-top: 1px solid var(--bd-light);
+
+    padding: 15px 0;
+}
+
+details:last-child {
+    border-bottom: 1px solid var(--bd-light);
+}
+
+
+/* ---------- SUMMARY ---------- */
+
+summary {
+    cursor: pointer;
+
+    font-weight: 700;
+
+    color: var(--txt);
+
+    padding: 5px 0;
+
+    transition: color 0.2s ease;
+}
+
+summary:hover {
+    color: var(--c1);
+}
+
+details[open] summary {
+    color: var(--c1);
+}
+
+
+/* Contenido FAQ */
+
+details p {
+    margin:
+
+        10px 0 5px;
+
+    color: var(--txt-light);
+
+    max-width: 800px;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(8, 15, 25, 0.62);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    z-index: 1200;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* ---------- CAJA DEL MODAL ---------- */
+
+.modal__dialog {
+    width: min(92vw, 520px);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--white);
+
+    border: 1px solid var(--bd);
+
+    border-radius: 16px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.3);
+
+    animation: modalEntrada 0.25s ease;
+}
+
+
+/* Animación */
+
+@keyframes modalEntrada {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.modal__dialog h2 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+}
+
+.modal__dialog p {
+    color: var(--txt-light);
+}
+
+
+/* ---------- FOOTER MODAL ---------- */
+
+.modal__footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    color: var(--txt-light);
+
+    padding: 25px 16px 35px;
+
+    font-size: 0.9rem;
+}
+
+footer a {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+:focus {
+    outline: 3px solid var(--c1);
+
+    outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--c1);
+
+    outline-offset: 3px;
+}
+
+
+/* Elementos solo para lectores de pantalla */
+
+.visually-hidden {
+    position: absolute !important;
+
+    height: 1px;
+    width: 1px;
+
+    overflow: hidden;
+
+    clip: rect(1px, 1px, 1px, 1px);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eef1f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b9c2cf;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8f9bab;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .header__inner {
+        min-height: 62px;
+    }
+
+    .nav__list {
+        gap: 2px;
+    }
+
+    .nav__list a {
+        padding: 7px 9px;
+
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin-top: 20px;
+    }
+
+    .hero {
+        padding: 30px 24px;
+    }
+
+    .cards {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — CELULARES
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .header__inner {
+        width: min(100% - 20px, var(--max-width));
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 10px 0;
+    }
+
+    .nav__list {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav__list a {
+        padding: 6px 8px;
+
+        font-size: 0.85rem;
+    }
+
+    main {
+        width: min(100% - 20px, var(--max-width));
+
+        margin-top: 15px;
+
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 25px 20px;
+
+        border-radius: 12px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    #faq {
+        padding: 20px;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal__dialog {
+        padding: 20px;
+
+        border-radius: 13px;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+```
+
+}
